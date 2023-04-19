@@ -1,10 +1,13 @@
-import React from 'react'
-import Header from '../../components/ClientComponents/Header'
+import Header from '../../components/ClientComponents/Header';
+import { Outlet } from 'react-router-dom';
 
 const ClientDashboard = () => {
   return (
-    <Header/>
-  )
-}
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+};
 
-export default ClientDashboard
+export default ClientDashboard;

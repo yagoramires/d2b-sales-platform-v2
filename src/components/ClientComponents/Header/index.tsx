@@ -1,8 +1,16 @@
 import { useState } from 'react';
-import { Logo } from '../../../styles/components/logo';
-import { Container, NavContainer } from './styles';
 import { Link } from 'react-router-dom';
-import { GiHamburgerMenu } from 'react-icons/gi';
+
+import { Container, ListItem, NavContainer, NavList } from './styles';
+
+import Logo from '../../../styles/components/logo';
+import {
+  AddIcon,
+  EditIcon,
+  LogoutIcon,
+  MenuIcon,
+  OrdersIcon,
+} from '../../../styles/components/icons';
 
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -12,33 +20,45 @@ const Header = () => {
     setOpenModal(!openModal);
   };
 
+  const handleLogout = () => {};
+
   return (
     <Container>
       <div>
-        <Logo>
-          D<span>2</span>B
-        </Logo>
-        <NavContainer openModal={openModal}>
+        <Logo />
+        <NavContainer>
           <p>{name}</p>
 
           <nav>
             <button onClick={handleOpenModal}>
-              <GiHamburgerMenu size={32} color='white' />
+              <MenuIcon />
             </button>
-            <ul>
-              <li>
-                <Link to='/order'>Pedido</Link>
-              </li>
-              <li>
-                <Link to='/dashboard'>Painel</Link>
-              </li>
-              <li>
-                <Link to='/profile-edit'>Editar Perfil</Link>
-              </li>
-              <li>
-                <button>Sair</button>
-              </li>
-            </ul>
+            <NavList openModal={openModal}>
+              <ListItem>
+                <Link to='/new-order/ilumi'>
+                  <AddIcon />
+                  Novo Pedido
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to='/orders'>
+                  <OrdersIcon />
+                  Pedidos
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to='/profile'>
+                  <EditIcon />
+                  Editar Perfil
+                </Link>
+              </ListItem>
+              <ListItem>
+                <button onClick={handleLogout}>
+                  <LogoutIcon />
+                  Sair
+                </button>
+              </ListItem>
+            </NavList>
           </nav>
         </NavContainer>
       </div>

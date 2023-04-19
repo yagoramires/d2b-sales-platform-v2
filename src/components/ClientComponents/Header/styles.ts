@@ -20,11 +20,14 @@ export const Container = styled.header`
   }
 `;
 
-export const NavContainer = styled.div<ModalProps>`
+export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  > p {
+    font-weight: 500;
+  }
 
   nav > button {
     margin-top: 6px;
@@ -35,48 +38,49 @@ export const NavContainer = styled.div<ModalProps>`
     position: relative;
   }
 
-  ul {
-    display: ${({ openModal }) => (openModal ? 'block' : 'none')};
-    width: 200px;
-    position: absolute;
-    top: 38px;
-    right: 2px;
-    padding: 16px 40px;
-    background: ${({ theme }) => theme.COLORS.DARK50};
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-
-    li {
-      width: 100%;
-      text-align: start;
-      padding: 4px 0;
-
-      a,
-      button {
-        width: 100%;
-        font-size: 16px;
-        color: ${({ theme }) => theme.COLORS.WHITE};
-        background: transparent;
-        text-align: start;
-      }
-    }
-
-    li:hover {
-      a,
-      button {
-        color: ${({ theme }) => theme.COLORS.SECONDARY};
-      }
-    }
-
-    a {
-      color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-  }
-
   button:hover ~ ul,
   ul:hover {
     display: block;
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+  }
+`;
+
+export const NavList = styled.ul<ModalProps>`
+  display: ${({ openModal }) => (openModal ? 'block' : 'none')};
+  width: 230px;
+  position: absolute;
+  top: 38px;
+  right: 2px;
+  padding: 16px 40px;
+  background: ${({ theme }) => theme.COLORS.DARK50};
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+  a {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+`;
+
+export const ListItem = styled.li`
+  width: 100%;
+  text-align: start;
+  padding: 4px 0;
+
+  a,
+  button {
+    width: 100%;
+    font-size: 16px;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    background: transparent;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  :hover {
+    a,
+    button {
+      color: ${({ theme }) => theme.COLORS.SECONDARY};
+    }
   }
 `;

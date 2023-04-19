@@ -8,17 +8,27 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     list-style: none;
     text-decoration: none;
-    font-family: 'Poppins'
+    font-family: 'Poppins';
   }
   button{
     cursor: pointer;
   }
-  /* dialog{
-    display: unset;
-    position: unset;
-  } */
   body {
-    background-color:#121212;
-    color: white;
+    background-color: ${({ theme }) => theme.COLORS.DARK100};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+
+  /* .active {
+    color: ${({ theme }) => theme.COLORS.SECONDARY}
+  } */
+  input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+  }
+  
+  input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+
   }
 `;
