@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.li`
   width: 100%;
   background: ${({ theme }) => theme.COLORS.GRAY800};
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
@@ -10,10 +10,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 `;
 export const ProductImg = styled.img`
-  width: 40px;
+  width: 60px;
 `;
 export const ProductQuantity = styled.input`
   width: 50px;
@@ -25,9 +25,10 @@ export const ProductQuantity = styled.input`
   text-align: center;
 `;
 
-export const ProductText = styled.span``;
+export const ProductText = styled.span`
+  font-size: 14px;
+`;
 
 export const CartButton = styled.button`
   background-color: transparent;
-  padding: 8px;
 `;

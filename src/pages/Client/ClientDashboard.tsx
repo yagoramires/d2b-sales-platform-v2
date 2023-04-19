@@ -1,11 +1,14 @@
 import Header from '../../components/ClientComponents/Header';
 import { Outlet } from 'react-router-dom';
+import { Section } from '../../styles/section';
 
 const ClientDashboard = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <Section>
+        <Outlet />
+      </Section>
     </>
   );
 };
