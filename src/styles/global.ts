@@ -13,10 +13,10 @@ export const GlobalStyles = createGlobalStyle`
   button{
     cursor: pointer;
   }
-  dialog{
+  /* dialog{
     display: unset;
     position: unset;
-  }
+  } */
   body {
     background-color:#121212;
     color: white;

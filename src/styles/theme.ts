@@ -4,6 +4,7 @@ export const mainTheme = {
   },
 
   COLORS: {
+    WHITE: '#FFFFFF',
     GRAY50: '#FAFAFA',
     GRAY100: '#F5F5F5',
     GRAY200: '#EEEEEE',

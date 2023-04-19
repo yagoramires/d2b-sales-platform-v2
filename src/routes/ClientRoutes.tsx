@@ -5,7 +5,9 @@ import ClientDashboard from '../pages/Client/ClientDashboard'
 const ClientRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<ClientDashboard/>} />
+      <Route path="/" element={<ClientDashboard/>}/>
+      <Route path="/:industry" element={<ClientDashboard/>} />
+      <Route path="/profile" element={<ClientDashboard/>} />
     </Routes>
   )
 }

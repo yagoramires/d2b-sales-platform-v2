@@ -6,7 +6,7 @@ import { GlobalStyles } from './styles/global';
 
 function App() {
   const user = true;
-  const admin = true;
+  const admin = false;
 
   return (
     <div className='App'>
