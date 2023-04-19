@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.li`
   width: 100%;
+  min-height: 70px;
   background: ${({ theme }) => theme.COLORS.GRAY800};
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   padding: 8px;
