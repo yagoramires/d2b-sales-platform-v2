@@ -6,6 +6,7 @@ import { TbEdit } from 'react-icons/tb';
 import { CgLogOut } from 'react-icons/cg';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { MdOutlineImageNotSupported } from 'react-icons/md';
+import { FiSearch } from 'react-icons/fi';
 
 export const MenuIcon = styled(GiHamburgerMenu).attrs(({ theme }) => ({
   size: 32,
@@ -34,7 +35,7 @@ export const LogoutIcon = styled(CgLogOut).attrs(({ theme }) => ({
 
 export const CartIcon = styled(RiShoppingCartLine).attrs(({ theme }) => ({
   size: 25,
-  color: theme.COLORS.PRIMARY,
+  color: theme.COLORS.WHITE,
 }))`
   min-width: 50px;
   max-width: 50px;
@@ -42,10 +43,15 @@ export const CartIcon = styled(RiShoppingCartLine).attrs(({ theme }) => ({
 
 export const NoImageIcon = styled(MdOutlineImageNotSupported).attrs(
   ({ theme }) => ({
-    size: 30,
+    size: 150,
     color: theme.COLORS.WHITE,
   }),
 )`
   min-width: 60px;
   max-width: 60px;
 `;
+
+export const SearchIcon = styled(FiSearch).attrs(({ theme }) => ({
+  size: 25,
+  color: theme.COLORS.WHITE,
+}))``;

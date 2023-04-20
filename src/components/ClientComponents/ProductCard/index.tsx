@@ -2,9 +2,13 @@ import { useState } from 'react';
 import {
   CartButton,
   Container,
-  ProductImg,
+  Text,
+  Image,
   ProductQuantity,
-  ProductText,
+  ProductForm,
+  ImageContainer,
+  Label,
+  TextContainer,
 } from './styles';
 import { CartIcon, NoImageIcon } from '../../../styles/components/icons';
 
@@ -31,38 +35,44 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Container>
-      {product.img ? (
-        <ProductImg src={product.img} alt={product.name} />
-      ) : (
-        <NoImageIcon />
-      )}
-      <ProductText style={{ minWidth: '80px', maxWidth: '80px' }}>
-        {product.code}
-      </ProductText>
-      <ProductText style={{ width: '100%' }}>{product.name}</ProductText>
-      <ProductText style={{ minWidth: '80px', maxWidth: '80px' }}>
-        {product.price.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        })}
-      </ProductText>
-      <ProductQuantity
-        type='number'
-        min={0}
-        max={999}
-        step={product.minValue}
-        value={total.quantity}
-        onChange={(e) => handleChangeInputValue(Number(e.target.value))}
-      />
-      <ProductText style={{ minWidth: '100px', maxWidth: '100px' }}>
-        {total.value.toLocaleString('pt-BR', {
-          style: 'currency',
-          currency: 'BRL',
-        })}
-      </ProductText>
-      <CartButton onClick={handleAddProductToCart}>
-        <CartIcon />
-      </CartButton>
+      <ImageContainer>
+        {product.img ? (
+          <Image src={product.img} alt={product.name} />
+        ) : (
+          <NoImageIcon />
+        )}
+      </ImageContainer>
+
+      <TextContainer>
+        <Label>Código:</Label>
+        <Text>{product.code}</Text>
+      </TextContainer>
+      <TextContainer>
+        <Label>Nome:</Label>
+        <Text>{product.name}</Text>
+      </TextContainer>
+      <ProductForm>
+        <TextContainer style={{ flexDirection: 'column', gap: '2px' }}>
+          <Label>Valor Unitário:</Label>
+          <Text style={{ fontWeight: 'bold' }}>
+            {product.price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </Text>
+        </TextContainer>
+        <ProductQuantity
+          type='number'
+          min={0}
+          max={999}
+          step={product.minValue}
+          value={total.quantity}
+          onChange={(e) => handleChangeInputValue(Number(e.target.value))}
+        />
+        <CartButton onClick={handleAddProductToCart}>
+          <CartIcon />
+        </CartButton>
+      </ProductForm>
     </Container>
   );
 };
