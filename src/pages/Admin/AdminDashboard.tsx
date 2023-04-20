@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { Section } from '../../styles/section';
 
 const AdminDashboard = () => {
   return (
-    <div>AdminDashboard</div>
-  )
-}
+    <Section>
+      <Outlet />
+    </Section>
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;

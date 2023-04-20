@@ -6,14 +6,14 @@ import { GlobalStyles } from './styles/global';
 
 function App() {
   const user = true;
-  const admin = false;
+  const admin = true;
 
   return (
     <div className='App'>
       {!user && admin && <AuthRoutes />}
       {user && admin && <AdminRoutes />}
       {user && !admin && <ClientRoutes />}
-      <GlobalStyles/>
+      <GlobalStyles />
     </div>
   );
 }

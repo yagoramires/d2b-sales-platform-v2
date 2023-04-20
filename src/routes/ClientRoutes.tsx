@@ -10,6 +10,7 @@ const ClientRoutes = () => {
     <Routes>
       <Route path='/' element={<ClientDashboard />}>
         <Route path='/' element={<Navigate to='/orders' />} />
+        <Route path='/*' element={<Navigate to='/' />} />
         <Route path='/orders' element={<Orders />} />
         <Route path='/orders/:id' element={<Orders />} />
         <Route path='/profile' element={<Profile />} />
