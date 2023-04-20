@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import {
   CartButton,
   Container,
@@ -31,7 +31,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
     });
   };
 
-  const handleAddProductToCart = () => {};
+  const handleAddProductToCart = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert(total.quantity);
+  };
 
   return (
     <Container>
@@ -51,7 +54,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <Label>Nome:</Label>
         <Text>{product.name}</Text>
       </TextContainer>
-      <ProductForm>
+      <ProductForm onSubmit={handleAddProductToCart}>
         <TextContainer style={{ flexDirection: 'column', gap: '2px' }}>
           <Label>Valor Unitário:</Label>
           <Text style={{ fontWeight: 'bold' }}>
@@ -69,7 +72,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           value={total.quantity}
           onChange={(e) => handleChangeInputValue(Number(e.target.value))}
         />
-        <CartButton onClick={handleAddProductToCart}>
+        <CartButton type='submit'>
           <CartIcon />
         </CartButton>
       </ProductForm>
