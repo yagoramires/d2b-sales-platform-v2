@@ -1,7 +1,8 @@
 import ProductCard from '../../../components/ClientComponents/ProductCard';
 import { products } from '../../../../productsMock';
-import { Container, ProductsList } from './styles';
+import { ProductsList } from './styles';
 import Search from '../../../components/Global/Search';
+import { Container } from '../../../styles/section';
 
 const Industry = () => {
   return (
